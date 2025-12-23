@@ -1,4 +1,4 @@
-import { Helmet, HelmetProvider } from "react-helmet-async";
+import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import TeacherSection from "@/components/TeacherSection";
@@ -9,7 +9,7 @@ import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <HelmetProvider>
+    <>
       <Helmet>
         <title>Science by KanakSom - Free CTET Science Preparation</title>
         <meta
@@ -68,7 +68,7 @@ const Index = () => {
         </main>
         <Footer />
       </div>
-    </HelmetProvider>
+    </>
   );
 };
 
