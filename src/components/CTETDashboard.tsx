@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Atom, Beaker, Leaf, BookOpen } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import SubjectCard from "./SubjectCard";
 
 const subjects = [
@@ -38,9 +39,16 @@ const subjects = [
 ];
 
 const CTETDashboard = () => {
+  const navigate = useNavigate();
+
   const handleSubjectClick = (subject: string) => {
-    console.log(`Navigate to ${subject} chapters`);
-    // TODO: Add navigation logic
+    const routes: Record<string, string> = {
+      Physics: "/physics",
+      Chemistry: "/chemistry",
+      Biology: "/biology",
+      "Science Pedagogy": "/pedagogy",
+    };
+    navigate(routes[subject] || "/");
   };
 
   return (
